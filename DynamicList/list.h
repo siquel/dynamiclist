@@ -2,7 +2,7 @@
 #define LIST_H
 
 typedef struct {
-	unsigned char* buf;
+	void** buf;
 	unsigned long count;
 	unsigned long element_size;
 	unsigned long capacity;
@@ -19,4 +19,10 @@ void list_add(list* list, void* data, unsigned long elem_size);
 void* list_get(list* list, unsigned long index);
 
 void list_grow(list* list);
+
+void* list_begin(list* list);
+
+void* list_end(list* list);
+
+void* list_create_elem(list* list);
 #endif
